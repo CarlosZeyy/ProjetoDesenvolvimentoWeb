@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Perfis do GitHub</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Buscador de Perfis do GitHub</h1>
+        <div class="search-box">
+            <input type="text" id="usernameInput" placeholder="Digite um nome de usuário...">
+            <button id="searchBtn">Buscar</button>
+        </div>
+
+        <div id="results" class="hidden">
+            <div id="profileInfo"></div>
+            <div id="languages"></div>
+            <h2>Repositórios Públicos:</h2>
+            <div id="reposList"></div>
+        </div>
+
+        <div id="loading" class="hidden">
+            <p>Carregando...</p>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

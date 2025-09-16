@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.container {
+  width: 90%;
+  max-width: 800px;
+}
+.search-box {
+  display: flex;
+  margin-bottom: 20px;
+}
+#usernameInput {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+#searchBtn {
+  padding: 10px 15px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+#searchBtn:hover {
+  background-color: #218838;
+}
+
+#profileInfo {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+#profileInfo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.repo-item {
+  background: white;
+  padding: 15px;
+  border: 1px solid #eee;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.repo-item a {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #0366d6;
+  text-decoration: none;
+}
+#languages {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.hidden {
+  display: none;
+}
+
+/* Estilos para as linguagens */
+#languages h3 {
+  margin-bottom: 10px;
+}
+.language-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espaçamento entre os badges */
+}
+.language-badge {
+  display: inline-flex; /* Para alinhar o ícone e o texto */
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 15px; /* Bordas arredondadas */
+  font-size: 0.9em;
+  font-weight: bold;
+  color: white; /* Cor do texto padrão */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra para legibilidade */
+}
+.language-badge i {
+  margin-right: 8px; /* Espaço entre o ícone e o nome */
+  font-size: 1.2em; /* Ícone um pouco maior que o texto */
+}
