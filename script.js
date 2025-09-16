@@ -14,7 +14,11 @@ searchBtn.addEventListener("click", () => {
   if (username) {
     gitHubApi(username);
   } else {
-    alert("Usuario inválido.");
+    Swal.fire({
+      title: "Campo de pesquisa vazio",
+      text: "Digite um nome de usuário",
+      icon: "error",
+    });
   }
 });
 
@@ -37,7 +41,19 @@ async function gitHubApi(username) {
     resultsDiv.classList.remove("hidden");
   } catch (error) {
     console.error("Erro ao buscar dados no GitHub:", error.message);
-    alert("Usuario não encontrado ou erro na API.");
+    if (error.response && error.response.status === 404) {
+      Swal.fire({
+        title: "Usuário não encontrado",
+        text: `O usuário "${username}" não foi encontrado, verifique o nome e tente novamente`,
+        icon: "error",
+      });
+    } else {
+      Swal.fire({
+        title: "Ops! Ocorreu um erro",
+        text: "Não foi possível buscar os dados no GitHub. Isso pode ser um problema de rede ou o limite de requisições da API foi atingido. Tente novamente mais tarde.",
+        icon: "warning",
+      });
+    }
     profileInfoDiv.innerHTML = "";
     reposListDiv.innerHTML = "";
     langDiv.innerHTML = "";
@@ -77,14 +93,14 @@ function displayRepos(repos) {
     repoElement.classList.add("repo-item");
 
     const lang = repo.language;
-    let languageBadgeHTML = '';
+    let languageBadgeHTML = "";
 
     if (lang) {
-      const color = languageColors[lang] ? languageColors[lang].color : '#ccc';
+      const color = languageColors[lang] ? languageColors[lang].color : "#ccc";
 
       languageBadgeHTML = `
         <span class="language-badge" style="background-color: ${color}; color="#fff"; font-weight: bold;">${lang}</span>
-      `
+      `;
     }
 
     repoElement.innerHTML = `
@@ -109,6 +125,11 @@ async function loadLanguageColors() {
     languageColors = colorRes.data;
   } catch (error) {
     console.error("Ocorreu algum erro ao carregar dados das linguagens", error);
+    Swal.fire({
+        title: "Ops! Ocorreu um erro",
+        text: "Ocorreu algum erro ao carregar dados das linguagens.",
+        icon: "warning",
+      });
   }
 }
 
