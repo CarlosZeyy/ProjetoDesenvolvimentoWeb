@@ -7,8 +7,10 @@ body {
   background-color: #f4f4f4;
   color: #333;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding-top: 5rem;
+  min-height: 100dvh;
 }
 
 /* Icones */
@@ -20,9 +22,18 @@ body {
 /* Corpo da pagina */
 
 main {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
+  flex-grow: 1;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
 }
 
 h1 {
@@ -31,6 +42,7 @@ h1 {
 
 .container {
   width: 90%;
+  height: auto;
   max-width: 80rem;
 }
 
@@ -45,6 +57,7 @@ h1 {
   display: flex;
   margin-bottom: 2rem;
 }
+
 #usernameInput {
   flex-grow: 1;
   padding: 1.5rem;
@@ -96,15 +109,37 @@ h1 {
   color: #0366d6;
   text-decoration: none;
 }
+
+#results {
+  width: auto;
+  font-size: 1.6rem;
+}
+
 #languages {
   margin-bottom: 2rem;
   padding: 1rem;
   background-color: #fff;
   border-radius: 0.5rem;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+
+.copyright {
+  font-size: 1.8rem;
+  font-weight: 600;
+  z-index: 99;
+}
+
 .hidden {
   display: none;
 }
+
 
 /* Estilos para as linguagens */
 #languages h3 {

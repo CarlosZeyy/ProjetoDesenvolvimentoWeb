@@ -24,6 +24,7 @@ searchBtn.addEventListener("click", () => {
 
 async function gitHubApi(username) {
   loadingDiv.classList.remove("hidden");
+  loadingDiv.classList.add("loading");
   resultsDiv.classList.add("hidden");
 
   try {
