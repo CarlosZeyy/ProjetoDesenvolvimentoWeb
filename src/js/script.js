@@ -18,6 +18,12 @@ searchBtn.addEventListener("click", () => {
       title: "Campo de pesquisa vazio",
       text: "Digite um nome de usuário",
       icon: "error",
+      customClass: {
+        popup: "swal-popup-custom",
+        title: "swal-title-custom",
+        htmlContainer: "swal-text-custom",
+        confirmButton: "swal-confirm-button-custom",
+      },
     });
   }
 });
@@ -47,12 +53,24 @@ async function gitHubApi(username) {
         title: "Usuário não encontrado",
         text: `O usuário "${username}" não foi encontrado, verifique o nome e tente novamente`,
         icon: "error",
+        customClass: {
+          popup: "swal-popup-custom",
+          title: "swal-title-custom",
+          htmlContainer: "swal-text-custom",
+          confirmButton: "swal-confirm-button-custom",
+        },
       });
     } else {
       Swal.fire({
         title: "Ops! Ocorreu um erro",
         text: "Não foi possível buscar os dados no GitHub. Isso pode ser um problema de rede ou o limite de requisições da API foi atingido. Tente novamente mais tarde.",
         icon: "warning",
+        customClass: {
+          popup: "swal-popup-custom",
+          title: "swal-title-custom",
+          htmlContainer: "swal-text-custom",
+          confirmButton: "swal-confirm-button-custom",
+        },
       });
     }
     profileInfoDiv.innerHTML = "";
@@ -127,10 +145,16 @@ async function loadLanguageColors() {
   } catch (error) {
     console.error("Ocorreu algum erro ao carregar dados das linguagens", error);
     Swal.fire({
-        title: "Ops! Ocorreu um erro",
-        text: "Ocorreu algum erro ao carregar dados das linguagens.",
-        icon: "warning",
-      });
+      title: "Ops! Ocorreu um erro",
+      text: "Ocorreu algum erro ao carregar dados das linguagens.",
+      icon: "warning",
+      customClass: {
+        popup: "swal-popup-custom",
+        title: "swal-title-custom",
+        htmlContainer: "swal-text-custom",
+        confirmButton: "swal-confirm-button-custom",
+      },
+    });
   }
 }
 
