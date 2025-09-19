@@ -93,7 +93,7 @@ function displayProfile(profile) {
             } | <strong>Seguindo:</strong> ${profile.following}</p>
             <a href="${
               profile.html_url
-            }" target="_blank">Ver Perfil no GitHub</a>
+            }" target="_blank" class="profileLink"><i class="fa-brands fa-github"></i>Ver Perfil no GitHub</a>
         </div>
         `;
 }
