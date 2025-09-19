@@ -133,7 +133,10 @@ h1 {
 .copyright {
   font-size: 1.8rem;
   font-weight: 600;
-  z-index: 99;
+}
+
+.copyright a {
+  text-decoration: none;
 }
 
 .hidden {
