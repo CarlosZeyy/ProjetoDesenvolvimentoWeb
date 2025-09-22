@@ -11,6 +11,8 @@ O **Buscador de Perfis do GitHub** é uma aplicação web front-end que permite 
 
 A aplicação consome a API oficial do GitHub para buscar os dados em tempo real, utilizando `async/await` e a biblioteca `Axios` para fazer as requisições HTTP.
 
+#### Projeto desenvolvido para aprensentar no final do semestre na aula de desenvolvimento web.
+
 **🔗 [Acesse a demonstração ao vivo](https://carloszeyy.github.io/seu-repositorio/)** ---
 
 ## ✨ Funcionalidades Principais
