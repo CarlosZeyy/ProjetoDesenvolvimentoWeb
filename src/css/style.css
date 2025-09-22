@@ -293,7 +293,6 @@ h1 {
 
 .theme-btn {
   background: none;
-  border: 1px solid var(--cor-borda);
   color: var(--cor-texto);
   padding: 1rem;
   border-radius: 50%;
