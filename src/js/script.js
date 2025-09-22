@@ -89,7 +89,7 @@ function displayProfile(profile) {
     <img src="${profile.avatar_url}" alt="Avatar de ${profile.name}">
         <div class="profile-details">
             <h2>${profile.name || "Nome não disponível"}</h2>
-            <p><strong>Login:</strong> ${profile.login}</p>
+            <p><strong>Usuário:</strong> ${profile.login}</p>
             <p>${profile.bio || "Bio não disponível."}</p>
             <p><strong>Seguidores:</strong> ${
               profile.followers
