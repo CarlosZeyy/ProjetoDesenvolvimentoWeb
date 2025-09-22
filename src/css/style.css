@@ -240,6 +240,23 @@ h1 {
   font-weight: 600;
 }
 
+.loading p {
+  font-size: 1.8rem;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .copyright {
   font-size: 1.8rem;
   font-weight: 600;
