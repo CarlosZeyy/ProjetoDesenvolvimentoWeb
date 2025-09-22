@@ -5,6 +5,9 @@ const profileInfoDiv = document.querySelector("#profileInfo");
 const langDiv = document.querySelector("#languages");
 const reposListDiv = document.querySelector("#reposList");
 const loadingDiv = document.querySelector("#loading");
+const themeBtn = document.querySelector("#theme-toggle");
+
+const body = document.body;
 
 const GITHUB_API_URL = "https://api.github.com";
 let languageColors = {};
@@ -84,7 +87,7 @@ async function gitHubApi(username) {
 function displayProfile(profile) {
   profileInfoDiv.innerHTML = `
     <img src="${profile.avatar_url}" alt="Avatar de ${profile.name}">
-        <div>
+        <div class="profile-details">
             <h2>${profile.name || "Nome não disponível"}</h2>
             <p><strong>Login:</strong> ${profile.login}</p>
             <p>${profile.bio || "Bio não disponível."}</p>
@@ -222,5 +225,25 @@ async function processAndDisplayLanguages(repos) {
     langDiv.innerHTML = `<p>Não foi possível carregar as linguagens do usuario.</p>`;
   }
 }
+
+// * Tema claro/escuro
+
+themeBtn.addEventListener("click", () => {
+  body.classList.toggle("dark-theme");
+
+  if (body.classList.contains("dark-theme")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+});
+
+(function loadTheme() {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    body.classList.add("dark-theme");
+  }
+})();
 
 loadLanguageColors();

@@ -38,7 +38,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body::after {
+body::before {
   content: "";
   position: absolute;
   top: 0;
@@ -48,7 +48,7 @@ body::after {
   background-image: url("../svg/github.svg");
   background-repeat: repeat;
   background-size: 100px 100px;
-  opacity: 0.03;
+  opacity: 0.04;
   z-index: -1;
   animation: moveBackground 90s linear infinite;
 }
@@ -65,6 +65,11 @@ body::after {
   }
 }
 
+.dark-theme body::before {
+  opacity: 0.08;
+  filter: invert(1);
+}
+
 /* Icones */
 
 .fa-github {
@@ -78,7 +83,6 @@ header .container {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
-  padding-top: 25rem;
 }
 
 main {
@@ -145,8 +149,8 @@ h1 {
   font-family: "Roboto";
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  background: white;
+  gap: 3rem;
+  background: var(--cor-caixa);
   padding: 2rem;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
@@ -161,22 +165,29 @@ h1 {
 
 .profileLink {
   text-decoration: none;
-  font-size: 2.2rem;
-  font-weight: bolder;
-  color: #000;
-  padding: 1rem;
-  display: flex;
-  background-color: #4040 !important;
-  border: 0.2rem solid #000;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  border: none;
   border-radius: 0.8rem;
+  padding: 1.2rem;
   text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .profileLink:hover {
-  color: #e0e0e0;
-  background-color: #404040 !important;
-  border: 0.2rem solid #252525;
-  box-shadow: 0.3rem 0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.2);
+  color: var(--cor-caixa);
+  background-color: var(--cor-texto);
+  box-shadow: 0 0.3rem 0.5rem var(--cor-sombra);
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
 }
 
 .iconLink {
@@ -217,7 +228,7 @@ h1 {
 #languages {
   margin-bottom: 2rem;
   padding: 1rem;
-  background-color: #fff;
+  background-color: var(--cor-caixa);
   border-radius: 0.5rem;
 }
 
@@ -236,7 +247,8 @@ h1 {
 
 .copyright a {
   text-decoration: none;
-  color: #000;
+  color: var(--cor-texto);
+  font-style: oblique;
   font-weight: bold;
 }
 
@@ -298,23 +310,52 @@ h1 {
 .language-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
+  justify-content: center;
+  padding-top: 1rem;
 }
 
 .language-badge {
-  display: inline-flex; /* Para alinhar o ícone e o texto */
+  display: inline-flex;
   align-items: center;
   padding: 0.5rem 1rem;
-  border-radius: 1.5rem; /* Bordas arredondadas */
-  font-size: 0.9rem;
+  border-radius: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  color: white; /* Cor do texto padrão */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra para legibilidade */
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .language-badge i {
-  margin-right: 0.8rem; /* Espaço entre o ícone e o nome */
-  font-size: 1.2rem; /* Ícone um pouco maior que o texto */
+  margin-right: 0.8rem;
+  font-size: 1.5rem;
+}
+
+/* Estilo linaguagem do PERFIL */
+
+#languages .language-badge {
+  display: flex;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%; /* Transforma em círculo */
+  flex-direction: column; /* Empilha o ícone e o texto */
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center;
+  padding: 0; /* Remove o padding da pílula */
+  gap: 0.5rem; /* Espaço entre o ícone e o texto */
+}
+
+/* Estilo ESPECÍFICO para o ícone no círculo */
+#languages .language-badge i {
+  font-size: 5rem; /* Ícone maior */
+  margin-right: 0; /* Remove a margem lateral */
+}
+
+/* Estilo ESPECÍFICO para o texto no círculo */
+#languages .language-badge span {
+  font-size: 1rem;
+  color: #ffffff;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.3);
 }
 
 /* Sweet Alert */
