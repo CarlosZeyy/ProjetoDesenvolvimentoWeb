@@ -78,9 +78,9 @@ body::before {
 
 /* Corpo da pagina */
 
-header .container {
+header .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 2rem 0;
 }
@@ -107,11 +107,15 @@ h1 {
   margin: 0 auto;
 }
 
+.header .theme-btn {
+  position: absolute;
+  left: 95%;
+}
+
 .title {
   display: flex;
   flex-wrap: nowrap;
   gap: 2rem;
-  /* justify-content: center; */
 }
 
 .search-box {
@@ -354,18 +358,18 @@ h1 {
   display: flex;
   width: 9rem;
   height: 9rem;
-  border-radius: 50%; /* Transforma em círculo */
-  flex-direction: column; /* Empilha o ícone e o texto */
-  justify-content: center; /* Centraliza verticalmente */
+  border-radius: 50%;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 0; /* Remove o padding da pílula */
-  gap: 0.5rem; /* Espaço entre o ícone e o texto */
+  padding: 0;
+  gap: 0.5rem;
 }
 
 /* Estilo ESPECÍFICO para o ícone no círculo */
 #languages .language-badge i {
-  font-size: 5rem; /* Ícone maior */
-  margin-right: 0; /* Remove a margem lateral */
+  font-size: 5rem;
+  margin-right: 0;
 }
 
 /* Estilo ESPECÍFICO para o texto no círculo */
@@ -377,18 +381,108 @@ h1 {
 
 /* Sweet Alert */
 .swal-popup-custom {
-  width: 50rem !important; /* Defina a largura desejada para a caixa do alerta */
+  width: 50rem !important; 
 }
 
 .swal-title-custom {
-  font-size: 2.6rem !important; /* Tamanho para o título do alerta */
+  font-size: 2.6rem !important; 
 }
 
 .swal-text-custom {
-  font-size: 1.8rem !important; /* Tamanho para o texto principal do alerta */
+  font-size: 1.8rem !important; 
 }
 
 .swal-confirm-button-custom {
-  font-size: 1.6rem !important; /* Tamanho do texto do botão */
-  padding: 1.2rem 2.4rem !important; /* Espaçamento interno para aumentar o botão */
+  font-size: 1.6rem !important; 
+  padding: 1.2rem 2.4rem !important;
+}
+
+/* Media queries */
+
+/* Para Tablets (até 768px) */
+@media (max-width: 768px) {
+  html {
+    font-size: 58%; /* Reduz a base da fonte para ajustar os tamanhos rem */
+  }
+
+  .header .theme-btn {
+    position: static; /* Remove o posicionamento absoluto que quebra o layout */
+    margin-left: 2rem;
+  }
+
+  header .header {
+    justify-content: space-between; /* Alinha o título e o botão nas extremidades */
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #profileInfo {
+    flex-direction: column; /* Empilha a imagem sobre o texto */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  #profileInfo img {
+    margin-right: 0;
+    margin-bottom: 2rem; /* Adiciona espaço abaixo da imagem */
+  }
+
+  .profile-details {
+    align-items: center; /* Centraliza os itens de detalhe do perfil */
+  }
+}
+
+/* Para Celulares (até 480px) */
+@media (max-width: 480px) {
+  html {
+    font-size: 55%;
+  }
+
+  .title {
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .fa-github {
+    font-size: 4.5rem; /* Diminui o ícone do GitHub no título */
+  }
+
+  h1 {
+    font-size: 2.4rem; /* Diminui o tamanho do título principal */
+  }
+
+  .search-box {
+    flex-direction: column; /* Empilha a barra de busca e o botão */
+    gap: 1rem;
+  }
+
+  #searchBtn {
+    margin-left: 0; /* Remove a margem do botão de busca */
+  }
+
+  #profileInfo img {
+    width: 15rem; /* Diminui a imagem do perfil */
+    height: 15rem;
+  }
+
+  .language-list {
+    gap: 1.5rem; /* Diminui o espaço entre os ícones de linguagem */
+  }
+
+  /* Diminui o tamanho dos círculos de linguagem */
+  #languages .language-badge {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  /* Ajusta o ícone e o texto dentro do círculo */
+  #languages .language-badge i {
+    font-size: 3.5rem;
+  }
+  #languages .language-badge span {
+    font-size: 1.2rem;
+  }
+
+  .copyright {
+    font-size: 1.4rem;
+  }
 }
