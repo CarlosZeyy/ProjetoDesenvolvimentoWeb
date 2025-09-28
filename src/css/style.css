@@ -24,6 +24,7 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
@@ -380,19 +381,19 @@ h1 {
 
 /* Sweet Alert */
 .swal-popup-custom {
-  width: 50rem !important; 
+  width: 50rem !important;
 }
 
 .swal-title-custom {
-  font-size: 2.6rem !important; 
+  font-size: 2.6rem !important;
 }
 
 .swal-text-custom {
-  font-size: 1.8rem !important; 
+  font-size: 1.8rem !important;
 }
 
 .swal-confirm-button-custom {
-  font-size: 1.6rem !important; 
+  font-size: 1.6rem !important;
   padding: 1.2rem 2.4rem !important;
 }
 
@@ -427,6 +428,10 @@ h1 {
 
   .profile-details {
     align-items: center; /* Centraliza os itens de detalhe do perfil */
+  }
+
+  .swal-popup-custom {
+    width: 90% !important; /* Usa 90% da largura da tela */
   }
 }
 
@@ -483,5 +488,9 @@ h1 {
 
   .copyright {
     font-size: 1.4rem;
+  }
+
+  .swal-popup-custom {
+    width: 90% !important; /* Usa 90% da largura da tela */
   }
 }
