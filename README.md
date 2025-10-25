@@ -13,7 +13,7 @@ A aplicação consome a API oficial do GitHub para buscar os dados em tempo real
 
 #### Projeto desenvolvido para aprensentar no final do semestre na aula de desenvolvimento web.
 
-**🔗 [Acesse a demonstração ao vivo](https://carloszeyy.github.io/seu-repositorio/)** ---
+**🔗 [Acesse a demonstração ao vivo](https://buscadorperfilgithub.netlify.app)** ---
 
 ## ✨ Funcionalidades Principais
 
